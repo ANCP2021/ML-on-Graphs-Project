@@ -7,7 +7,6 @@ biotime_df = pd.read_csv('BioTIMEQuery_24_06_2021.csv')
 # Drop columns
 biotime_df_columns_dropped = biotime_df.drop(
     ['Unnamed: 0', 
-    'STUDY_ID', 
     'SAMPLE_DESC', 
     'PLOT', 
     'ID_SPECIES', 
@@ -40,9 +39,10 @@ combined_subset_biotime_df = filter_subset_biotime_df.groupby(['YEAR', 'GENUS_SP
     'LATITUDE': 'first',  # Take the first occurrence for the remaining columns
     'LONGITUDE': 'first',
     'GENUS': 'first',
-    'SPECIES': 'first'
+    'SPECIES': 'first',
+    'STUDY_ID': 'first'
 }).reset_index()
 
 
-combined_subset_biotime_df.to_csv('Filtered_Biotime.csv', sep=',')
-print(combined_subset_biotime_df['GENUS_SPECIES'] == "Upeneichthys lineatus")
+# combined_subset_biotime_df.to_csv('Filtered_Biotime.csv', sep=',')
+print(combined_subset_biotime_df)
