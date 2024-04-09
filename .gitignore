@@ -8,7 +8,7 @@
 **/.idea
 
 # Datasets
-Datasets/BioTIMEQuery_24_06_2021.csv
+Datasets/BioTIME*
 
 # MacOS
 **/.DS_Store
