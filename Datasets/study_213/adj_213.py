@@ -28,19 +28,19 @@ import numpy as np
 # An undirected network will actually just be a complete graph since all the predators eat 
 # both of the "prey" species and each other as well as themselves
 adjacency_matrix = np.array([
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1],
+    [1, 0, 1, 1, 1],
+    [1, 1, 0, 1, 0],
+    [1, 1, 1, 0, 1],
+    [1, 1, 0, 1, 0],
 ])
 
 # Here, we have a directed variant where predators have edges pointing to prey, but not the otherway around
 # Now, the squid have no outgoing edges, and the butterfish only has one
 adjacency_matrix_directed = np.array([
-    [1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1],
-    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1],
     [0, 0, 1, 1, 1],
-    [0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 1],
+    [0, 0, 0, 0, 0],
 ])
